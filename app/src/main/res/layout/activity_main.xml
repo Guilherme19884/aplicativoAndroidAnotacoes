@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.MainActivity"
+    android:backgroundTint="@color/green">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tb_menuSuperior"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:background="@color/green"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:title="@string/app_name"
+        app:titleTextColor="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteY="5dp" />
+
+    <EditText
+        android:id="@+id/et_nomePaciente"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        app:layout_constraintTop_toBottomOf="@+id/iv_maletaMedica"
+        android:hint="Nome do Paciente"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="@+id/tb_menuSuperior"
+        app:layout_constraintEnd_toEndOf="@+id/tb_menuSuperior"/>
+
+    <EditText
+        android:id="@+id/et_dataNascimento"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        app:layout_constraintTop_toBottomOf="@+id/et_nomePaciente"
+        android:hint="Data de Nascimento"
+        android:inputType="date"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="@+id/et_nomePaciente"
+        app:layout_constraintEnd_toEndOf="@+id/et_nomePaciente"/>
+
+    <EditText
+        android:id="@+id/et_peso"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        app:layout_constraintTop_toBottomOf="@+id/et_dataNascimento"
+        android:hint="Informe seu peso"
+        android:inputType="numberDecimal"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="@+id/et_dataNascimento"
+        app:layout_constraintEnd_toEndOf="@+id/et_dataNascimento"/>
+
+    <TextView
+        android:id="@+id/tv_enfermidade"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/enfermidade"
+        app:layout_constraintTop_toBottomOf="@+id/et_peso"
+        android:layout_marginTop="20dp"
+        android:textSize="18dp" />
+
+
+    <CheckBox
+        android:id="@+id/cb_pressao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:padding="4dp"
+        android:text="Pressão alta"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintStart_toStartOf="@+id/tv_enfermidade"
+        app:layout_constraintTop_toBottomOf="@+id/tv_enfermidade" />
+
+    <CheckBox
+        android:id="@+id/cb_diabetes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@+id/cb_pressao"
+        app:layout_constraintStart_toEndOf="@+id/cb_pressao"
+        android:text="Diabetes"
+        android:padding="4dp"/>
+
+    <CheckBox
+        android:id="@+id/cb_colesterol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@+id/cb_diabetes"
+        app:layout_constraintStart_toEndOf="@+id/cb_diabetes"
+        android:text="Colesterol"
+        android:padding="4dp"/>
+
+    <CheckBox
+        android:id="@+id/cb_renal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@+id/cb_colesterol"
+        app:layout_constraintStart_toEndOf="@+id/cb_colesterol"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Renal"
+        android:padding="4dp"/>
+
+    <TextView
+        android:id="@+id/tv_UsoDeSubstancias"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Faz uso de algumas dessas substâncias? "
+        app:layout_constraintTop_toBottomOf="@+id/cb_pressao"
+        app:layout_constraintStart_toStartOf="@+id/cb_pressao"
+        android:layout_marginTop="20dp"
+        android:textSize="18dp" />
+
+    <CheckBox
+        android:id="@+id/cb_fumante"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/tv_UsoDeSubstancias"
+        app:layout_constraintStart_toStartOf="@+id/cb_pressao"
+        android:text="Fumante"
+        android:layout_marginTop="20dp"
+        android:padding="4dp"/>
+
+    <CheckBox
+        android:id="@+id/cb_consumeAlcool"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@+id/cb_fumante"
+        app:layout_constraintStart_toEndOf="@+id/cb_fumante"
+        android:text="Consume Álcool"
+        android:padding="4dp"/>
+
+    <CheckBox
+        android:id="@+id/cb_usaDrogas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@+id/cb_consumeAlcool"
+        app:layout_constraintStart_toEndOf="@+id/cb_consumeAlcool"
+        android:text="Usa Drogas"
+        android:padding="4dp"/>
+
+    <Switch
+        android:id="@+id/sw_simOuNao"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginTop="20dp"
+        android:hint="sim"
+        android:splitTrack="false"
+        android:switchMinWidth="56dp"
+        android:minHeight="56dp"
+        android:switchPadding="20dp"
+        android:switchTextAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:text="Pratica atividade física ?"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="@id/cb_fumante"
+        app:layout_constraintTop_toBottomOf="@id/cb_fumante"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_1parte"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="163dp" />
+
+    <Button
+        android:id="@+id/bt_salvar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/green"
+        android:text="Salvar"
+        app:layout_constraintTop_toBottomOf="@+id/gl_1parte" />
+
+    <Button
+        android:id="@+id/bt_calendario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/green"
+        android:text="Anotar Pressão"
+        app:layout_constraintTop_toBottomOf="@+id/bt_salvar" />
+
+    <ImageView
+        android:id="@+id/iv_maletaMedica"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tb_menuSuperior"
+        app:srcCompat="@drawable/prancheta"
+        app:tint="@color/gray" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
